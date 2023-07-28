@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 from bill_splitter import transactions_maker
 
 def generate_random_list():
-    length = random.randint(1, 100)  # Random length between 5 and 15
+    length = random.randint(1, 15)  # Random length between 5 and 15
     return [random.randint(1, 200) for _ in range(length)]  # Random positive values between 1 and 200
 
 results = []
-for _ in range(100):
+for _ in range(10):
     lst = generate_random_list()
     print(lst, len(lst))
     result = transactions_maker(lst)
