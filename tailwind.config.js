@@ -5,6 +5,8 @@ module.exports = {
     extend: {},
     colors: {
       primary: '#F9D1D6',
+      secondary: '#FCF7F2',
+      tertiary: '#6B576A',
     },
     fontFamily: {
       sans: ['Montserrat', 'Roboto'],

@@ -9,7 +9,7 @@ export default function LandingSection() {
           Easily divide expenses
         </h1>
         <div>
-          <img src={require("../images/hero-image.png")} />
+          {/* <img src={require("../images/hero-image.png")} /> */}
         </div>
       </div>
     </section>
