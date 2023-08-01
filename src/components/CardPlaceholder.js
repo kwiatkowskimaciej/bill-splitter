@@ -1,7 +1,7 @@
 export default function CardPlaceholder(props) {
   const handleClick = () => {
     props.setCalculatorOpen(true)
-    props.changeNumberOfPeople()
+    props.addPersonCard()
   }
 
   return (

@@ -1,6 +1,6 @@
 export default function PersonCard(props) {
   return (
-    <div key={props.key} className="border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] h-[109px] flex items-center justify-between px-7">
+    <div className="border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] h-[109px] flex items-center justify-between px-7">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -8,6 +8,7 @@ export default function PersonCard(props) {
         strokeWidth={1.5}
         stroke="currentColor"
         className="w-6 h-6"
+        onClick={props.remove}
       >
         <path
           strokeLinecap="round"

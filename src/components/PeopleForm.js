@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import PersonCard from './PersonCard';
+import CardPlaceholder from './CardPlaceholder';
 
-export default function PeopleForm() {
+export default function PeopleForm(props) {
   const [formValues, setFormValues] = useState([{ name: '', amount: '' }]);
 
   let handleChange = (i, e) => {
@@ -28,19 +29,24 @@ export default function PeopleForm() {
   return (
     <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
       {formValues.map((element, index) => (
-        <PersonCard key={index} onChange={e => handleChange(index, e)} valueName={element.name || ""} valueAmount={element.amount || ""}/>
+          <PersonCard
+            key={index}
+            onChange={(e) => handleChange(index, e)}
+            valueName={element.name || ''}
+            valueAmount={element.amount || ''}
+            remove={() => removeFormFields(index)}
+          />
       ))}
 
-      <div className="button-section">
+      <CardPlaceholder setCalculatorOpen={props.setCalculatorOpen} addPersonCard={addFormFields}/>
+
+      <div className="absolute bottom-[120px] left-0 right-0 flex justify-center mx-auto px-6 text-[#ffffff]">
         <button
-          className="button add"
-          type="button"
-          onClick={() => addFormFields()}
+          type="submit"
+          disabled={!props.calculatorOpen}
+          className="font-['Montserrat'] font-semibold bg-tertiary w-full h-[56px] rounded-full disabled:bg-[#1D1B20] disabled:opacity-[0.12]"
         >
-          Add
-        </button>
-        <button className="button submit" type="submit">
-          Submit
+          Calculate
         </button>
       </div>
     </form>
