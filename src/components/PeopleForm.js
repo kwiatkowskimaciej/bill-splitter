@@ -3,7 +3,7 @@ import PersonCard from './PersonCard';
 import CardPlaceholder from './CardPlaceholder';
 
 export default function PeopleForm(props) {
-  const [formValues, setFormValues] = useState([{ name: '', amount: '' }]);
+  const [formValues, setFormValues] = useState([]);
 
   let handleChange = (i, e) => {
     let newFormValues = [...formValues];

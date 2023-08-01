@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import CardPlaceholder from './CardPlaceholder';
 import PeopleForm from './PeopleForm';
 
 export default function PeopleCards() {
