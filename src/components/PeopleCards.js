@@ -1,5 +1,6 @@
 import { useEffect, useReducer, useState } from 'react';
 import CardPlaceholder from './CardPlaceholder';
+import PeopleForm from './PeopleForm';
 
 function reducer(state, action) {
   if (action.type === 'increment_people') {
@@ -39,9 +40,10 @@ export default function PeopleCards() {
         </p>
       </div>
       <div
-        className={`transition-[top] ease-out duration-500 w-screen h-full bg-secondary absolute top-[300px] rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7`}
+        className={`transition-[top] ease-out duration-500 w-screen h-full bg-secondary absolute top-[300px] rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5`}
         style={{ top: `${firstCardPosition}px` }}
       >
+        <PeopleForm />
         <CardPlaceholder
           setCalculatorOpen={setCalculatorOpen}
           changeNumberOfPeople={handleClick}
