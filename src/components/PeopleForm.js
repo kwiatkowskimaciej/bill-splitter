@@ -1,11 +1,9 @@
 import { useEffect, useRef } from 'react';
 import PersonCard from './PersonCard';
 import CardPlaceholder from './CardPlaceholder';
-import useFormSubmit from '../hooks/useFormSubmit';
 
 export default function PeopleForm(props) {
   const cardContainerRef = useRef(null);
-  const { isLoading, response, submit } = useFormSubmit();
 
   useEffect(() => {
     if (cardContainerRef.current) {
@@ -30,13 +28,8 @@ export default function PeopleForm(props) {
     props.setFormValues(newFormValues);
   };
 
-  let handleSubmit = (event) => {
-    event.preventDefault();
-    submit(props.formValues);
-  };
-
   return (
-    <form className="relative" onSubmit={handleSubmit}>
+    <form className="relative" onSubmit={(e) => props.handleSubmit(e)}>
       <div
         ref={cardContainerRef}
         className={`transition-[top] ease-out duration-500 w-screen h-[calc(100vh-160px-96px-24px)] bg-secondary absolute top-[300px] rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[20px]`}
@@ -63,7 +56,7 @@ export default function PeopleForm(props) {
           disabled={!props.calculatorOpen}
           className="inline-flex items-center justify-center font-['Montserrat'] font-semibold bg-tertiary w-full h-[56px] rounded-full disabled:bg-[#1D1B20] disabled:opacity-[0.12]"
         >
-          {isLoading ? <svg
+          {props.isLoading ? <svg
             className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

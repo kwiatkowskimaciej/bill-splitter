@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import PeopleForm from './PeopleForm';
+import useFormSubmit from '../hooks/useFormSubmit';
 
 export default function PeopleCards() {
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [firstCardPosition, setFirstCardPosition] = useState(300);
   const [secondCardPosition, setSecondCardPosition] = useState(300);
   const [formValues, setFormValues] = useState([]);
+  const { isLoading, response, submit } = useFormSubmit();
 
   useEffect(() => {
     if (calculatorOpen) {
@@ -23,6 +25,11 @@ export default function PeopleCards() {
     (total, person) => total + parseFloat(person.amount || 0),
     0
   );
+
+  let handleSubmit = (event) => {
+    event.preventDefault();
+    submit(formValues);
+  };
 
   return (
     <div className="w-screen h-[calc(100vh-60px)] absolute bottom-0 overflow-hidden">
@@ -44,6 +51,8 @@ export default function PeopleCards() {
         calculatorOpen={calculatorOpen}
         setCalculatorOpen={setCalculatorOpen}
         firstCardPosition={firstCardPosition}
+        handleSubmit={handleSubmit}
+        isLoading={isLoading}
       />
     </div>
   );
