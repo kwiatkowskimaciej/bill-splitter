@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { splitBill } from '../billSplitter';
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -10,7 +11,8 @@ const useFormSubmit = () => {
     setLoading(true);
     try {
       await wait(2000);
-      await setResponse(data);
+      const transactions = await splitBill(data);
+      setResponse(transactions);
     } catch (error) {
       setResponse('Error');
     } finally {

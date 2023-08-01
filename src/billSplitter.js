@@ -1,5 +1,5 @@
 const splitBill = (data) => {
-  newData = data
+  const newData = data
     .map((item) => ({
       ...item,
       amount: parseFloat(item.amount),
@@ -14,7 +14,7 @@ const splitBill = (data) => {
   const items = newData.length;
   const avg = total / items;
 
-  diffList = newData.map((item) => ({
+  const diffList = newData.map((item) => ({
     ...item,
     amount: item.amount - avg,
   }));
@@ -58,8 +58,10 @@ const splitBill = (data) => {
     i += 1;
   }
 
-  return transactions
+  return transactions;
 };
+
+export { splitBill };
 
 // Data sample in case sth went wrong
 // const data = [
