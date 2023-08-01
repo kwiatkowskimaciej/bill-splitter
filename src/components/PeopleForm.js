@@ -1,49 +1,46 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import PersonCard from './PersonCard';
 import CardPlaceholder from './CardPlaceholder';
 
 export default function PeopleForm(props) {
-  const [formValues, setFormValues] = useState([]);
-
   const cardContainerRef = useRef(null);
 
   useEffect(() => {
-    // Scroll to the bottom of the div when formValues change
     if (cardContainerRef.current) {
       const lastCard = cardContainerRef.current.lastChild;
       lastCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
-  }, [formValues]);
+  }, [props.formValues]);
 
   let handleChange = (i, e) => {
-    let newFormValues = [...formValues];
+    let newFormValues = [...props.formValues];
     newFormValues[i][e.target.name] = e.target.value;
-    setFormValues(newFormValues);
+    props.setFormValues(newFormValues);
   };
 
   let addFormFields = () => {
-    setFormValues([...formValues, { name: '', amount: '' }]);
+    props.setFormValues([...props.formValues, { name: '', amount: '' }]);
   };
 
   let removeFormFields = (i) => {
-    let newFormValues = [...formValues];
+    let newFormValues = [...props.formValues];
     newFormValues.splice(i, 1);
-    setFormValues(newFormValues);
+    props.setFormValues(newFormValues);
   };
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    alert(JSON.stringify(formValues));
+    alert(JSON.stringify(props.formValues));
   };
 
   return (
     <form className="relative" onSubmit={handleSubmit}>
       <div
-      ref={cardContainerRef}
-        className={`transition-[top] ease-out duration-500 w-screen h-[calc(100vh-160px-96px)] bg-secondary absolute top-[300px] rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[20px]`}
+        ref={cardContainerRef}
+        className={`transition-[top] ease-out duration-500 w-screen h-[calc(100vh-160px-96px-24px)] bg-secondary absolute top-[300px] rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[20px]`}
         style={{ top: `${props.firstCardPosition}px` }}
       >
-        {formValues.map((element, index) => (
+        {props.formValues.map((element, index) => (
           <PersonCard
             key={index}
             onChange={(e) => handleChange(index, e)}

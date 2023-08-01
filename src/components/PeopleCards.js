@@ -5,13 +5,24 @@ export default function PeopleCards() {
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [firstCardPosition, setFirstCardPosition] = useState(300);
   const [secondCardPosition, setSecondCardPosition] = useState(300);
+  const [formValues, setFormValues] = useState([]);
 
   useEffect(() => {
     if (calculatorOpen) {
-      setFirstCardPosition(100);
+      setFirstCardPosition(124);
       setSecondCardPosition(16);
     }
-  }, [calculatorOpen]);
+    if (formValues.length === 0) {
+      setCalculatorOpen(false);
+      setFirstCardPosition(300);
+      setSecondCardPosition(300);
+    }
+  }, [calculatorOpen, formValues]);
+
+  const totalAmount = formValues.reduce(
+    (total, person) => total + parseFloat(person.amount || 0),
+    0
+  );
 
   return (
     <div className="w-screen h-[calc(100vh-60px)] absolute bottom-0 overflow-hidden">
@@ -21,10 +32,15 @@ export default function PeopleCards() {
         hidden={!calculatorOpen}
       >
         <p className="font-['Roboto'] text-xl font-medium text-[#ffffff]">
-          Total: $665
+          Total: ${totalAmount.toFixed(2)}
+        </p>
+        <p className="font-['Roboto'] text-[#ffffff]">
+          Number of people: {formValues.length}
         </p>
       </div>
       <PeopleForm
+        formValues={formValues}
+        setFormValues={setFormValues}
         calculatorOpen={calculatorOpen}
         setCalculatorOpen={setCalculatorOpen}
         firstCardPosition={firstCardPosition}
