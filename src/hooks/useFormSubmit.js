@@ -10,7 +10,7 @@ const useFormSubmit = () => {
   const submit = async (data) => {
     setLoading(true);
     try {
-      await wait(2000);
+      // await wait(2000);
       const transactions = await splitBill(data);
       setResponse(transactions);
     } catch (error) {
