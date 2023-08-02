@@ -1,15 +1,16 @@
 import './App.css';
 import React from 'react';
-import Header from './components/Header';
-import LandingSection from './components/LandingSection';
-import PeopleCards from './components/PeopleCards';
+import Homepage from './components/Homepage';
+import { Route, Routes } from 'react-router-dom';
+import AboutPage from './components/AboutPage';
 
 function App() {
   return (
     <React.Fragment>
-        <Header />
-        <LandingSection />
-        <PeopleCards />
+      <Routes>
+      <Route path="/" element={<Homepage />} />;
+      <Route path="/about" element={<AboutPage />} />
+    </Routes>
     </React.Fragment>
   );
 }

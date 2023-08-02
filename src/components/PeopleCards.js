@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import PeopleForm from './PeopleForm';
 import useFormSubmit from '../hooks/useFormSubmit';
 import TransferCard from './TransferCard';
+import NoTransfersMessage from './NoTransfersMessage';
 
 export default function PeopleCards() {
   const [calculatorOpen, setCalculatorOpen] = useState(false);
@@ -143,6 +144,7 @@ export default function PeopleCards() {
           top: `${response ? thirdCardPosition : '100vh'}`,
         }}
       >
+        {response?.length === 0 ? <NoTransfersMessage /> : null}
         {response !== null
           ? response.map((data, index) => (
               <TransferCard key={index} data={data} />
