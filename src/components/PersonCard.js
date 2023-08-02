@@ -1,6 +1,6 @@
 export default function PersonCard(props) {
   return (
-    <div className="border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] min-h-[109px] flex items-center justify-between px-7">
+    <div className="drop-shadow-lg border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] min-h-[109px] flex items-center justify-between px-7">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -31,6 +31,7 @@ export default function PersonCard(props) {
               value={props.valueName}
               onChange={props.onChange}
               className="block w-full rounded-lg border-0 py-2 pl-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 max-w-[140px]"
+              required
             />
           </div>
         </div>
