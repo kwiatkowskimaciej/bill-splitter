@@ -71,4 +71,4 @@ export { splitBill };
 //   { name: 'Kate', amount: '7.98' },
 // ];
 
-// splitBill(data);
+// splitBill(data)

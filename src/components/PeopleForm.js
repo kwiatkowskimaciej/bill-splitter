@@ -59,6 +59,7 @@ export default function PeopleForm(props) {
           type="submit"
           disabled={!props.calculatorOpen}
           className="inline-flex items-center justify-center font-['Montserrat'] font-semibold bg-tertiary w-full h-[56px] rounded-full disabled:bg-[#1D1B20] disabled:opacity-[0.12]"
+          onClick={() => props.setBack(false)}
         >
           {props.isLoading ? <svg
             className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"

@@ -1,6 +1,6 @@
 export default function TransferCard(props) {
   return (
-    <div className="border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] min-h-[139px] flex items-center justify-between px-7">
+    <div className="drop-shadow-lg border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] min-h-[139px] flex items-center justify-between px-7">
       <div>
         <div className="mb-2.5">
           <p className="font-['Roboto'] font-semibold text-sm">Sender</p>
