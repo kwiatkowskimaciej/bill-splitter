@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Dialog, Popover} from '@headlessui/react'
 import {
-  Bars3Icon,
+  Bars2Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import Nav from './Nav'
@@ -25,7 +25,7 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars2Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
