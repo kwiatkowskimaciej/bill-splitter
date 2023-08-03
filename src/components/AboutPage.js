@@ -34,7 +34,7 @@ export default function AboutPage() {
             transfers and show you who should transfer money to whom.
           </li>
         </ul>
-        <footer className="flex flex-col items-center font-['Roboto']">
+        <footer className="flex flex-col items-start font-['Roboto']">
           <p>&copy; Created by <a href="https://github.com/kwiatkowskimaciej">Maciej Kwiatkowski</a>, {year}</p>
         </footer>
       </div>
