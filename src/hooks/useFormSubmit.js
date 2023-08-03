@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { splitBill } from '../billSplitter';
 
-const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+// const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 // const testData = [
 //   { name: 'John', amount: '12.45' },
 //   { name: 'Bob', amount: '13.56' },

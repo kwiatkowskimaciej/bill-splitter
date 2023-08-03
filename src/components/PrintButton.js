@@ -10,6 +10,7 @@ export default function PrintButton(props) {
         trigger={() => (
           <button
             className="inline-flex items-center justify-center font-['Montserrat'] font-semibold bg-tertiary text-[#ffffff] border h-[56px] rounded-full disabled:bg-[#1D1B20] disabled:opacity-[0.12] px-6"
+            disabled={props.response.length === 0}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
