@@ -7,7 +7,7 @@ const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 //   { name: 'Bob', amount: '13.56' },
 //   { name: 'Steven', amount: '1.43' },
 //   { name: 'Kate', amount: '7.98' },
-//   { name: 'Slave', amount: '4.43' },
+//   { name: 'Stefan', amount: '4.43' },
 //   { name: 'Pete', amount: '2.98' },
 //   { name: 'Winston', amount: '8.43' },
 //   { name: 'Bruce', amount: '3.80' },

@@ -3,6 +3,7 @@ import PeopleForm from './PeopleForm';
 import useFormSubmit from '../hooks/useFormSubmit';
 import TransferCard from './TransferCard';
 import NoTransfersMessage from './NoTransfersMessage';
+import PrintButton from './PrintButton';
 
 export default function PeopleCards() {
   const [calculatorOpen, setCalculatorOpen] = useState(false);
@@ -111,15 +112,15 @@ export default function PeopleCards() {
         hidden={!calculatorOpen}
       >
         {response !== null && !back ? (
-          <>
-            <p className="font-['Roboto'] text-xl font-medium text-[#ffffff]">
+          <div className='flex justify-between items-center gap-2'>
+            <p className="font-['Roboto'] text-2xl font-medium text-[#ffffff]">
               Money transfers:
             </p>
-            <p className="font-['Roboto'] text-[#ffffff]">Print</p>
-          </>
+            <PrintButton response={response}/>
+          </div>
         ) : (
           <>
-            <p className="font-['Roboto'] text-xl font-medium text-[#ffffff]">
+            <p className="font-['Roboto'] text-2xl font-medium text-[#ffffff]">
               Total: ${totalAmount.toFixed(2)}
             </p>
             <p className="font-['Roboto'] text-[#ffffff]">
