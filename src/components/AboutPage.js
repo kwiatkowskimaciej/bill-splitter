@@ -35,10 +35,7 @@ export default function AboutPage() {
           </li>
         </ul>
         <footer className="flex flex-col items-center font-['Roboto']">
-          <p>&copy; Bill Splitter</p>{' '}
-          <p>
-            Created by <a href="https://github.com/kwiatkowskimaciej">Maciej Kwiatkowski</a>, {year}
-          </p>
+          <p>&copy; Created by <a href="https://github.com/kwiatkowskimaciej">Maciej Kwiatkowski</a>, {year}</p>
         </footer>
       </div>
     </>
