@@ -101,7 +101,7 @@ export default function PeopleCards() {
   };
 
   return (
-    <div className="w-screen h-[calc(100vh-60px)] absolute bottom-0 overflow-hidden">
+    <div className="w-screen h-[calc(100%-60px)] absolute bottom-0 overflow-hidden">
       <div
         className={`transition-[top] ease-out duration-500 delay-500 w-screen h-screen bg-tertiary absolute rounded-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7`}
         style={{
