@@ -17,6 +17,7 @@ export default function PeopleCards() {
     time: '500ms',
     delay: '500ms',
     function: 'ease-out',
+    zIndex: 0,
   });
   const [thirdCardPosition, setThirdCardPosition] = useState('100vh');
   const [formValues, setFormValues] = useState([]);
@@ -27,8 +28,8 @@ export default function PeopleCards() {
   useEffect(() => {
     if (formValues.length === 0) {
       setCalculatorOpen(false);
-      setResponse(null)
-      setBack(false)
+      setResponse(null);
+      setBack(false);
       setFirstCardStyle({ ...firstCardStyle, position: '300px' });
       setSecondCardStyle({ ...secondCardStyle, position: '300px' });
     }
@@ -61,6 +62,14 @@ export default function PeopleCards() {
           delay: '500ms',
           function: 'ease-out',
         });
+        setTimeout(() => {
+          if (!back) {
+            setSecondCardStyle({
+              ...secondCardStyle,
+              zIndex: 10,
+            });
+          }
+        }, 500);
       }, 500);
     }
     if (back) {
@@ -85,6 +94,7 @@ export default function PeopleCards() {
           position: '16px',
           delay: '500ms',
           function: 'ease-out',
+          zIndex: 0,
         });
       }, 500);
     }
@@ -108,15 +118,16 @@ export default function PeopleCards() {
           top: `${secondCardStyle.position}`,
           transitionDelay: `${secondCardStyle.delay}`,
           transitionTimingFunction: `${secondCardStyle.function}`,
+          zIndex: `${secondCardStyle.zIndex}`,
         }}
         hidden={!calculatorOpen}
       >
         {response !== null && !back ? (
-          <div className='flex justify-between items-center gap-2'>
+          <div className="flex justify-between items-center gap-2">
             <p className="font-['Roboto'] text-2xl font-medium text-[#ffffff]">
               Money transfers:
             </p>
-            <PrintButton response={response}/>
+            <PrintButton response={response} />
           </div>
         ) : (
           <>
@@ -140,7 +151,7 @@ export default function PeopleCards() {
         setBack={setBack}
       />
       <div
-        className={`transition-[top] ease-out duration-500 delay-500 w-screen h-[calc(100vh-160px-96px)] bg-secondary absolute rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[44px]`}
+        className={`transition-[top] ease-out duration-500 delay-500 w-screen h-[calc(100%-112px-76px-16px)] bg-secondary absolute rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[40px] z-20`}
         style={{
           top: `${response ? thirdCardPosition : '100vh'}`,
         }}
@@ -154,7 +165,7 @@ export default function PeopleCards() {
       </div>
       {response !== null && (
         <div
-          className="transition-[bottom] ease-out duration-500 fixed bottom-[-98px] left-0 right-0 flex justify-end gap-2 mx-auto px-6 text-[#ffffff] bg-secondary p-[20px] border border-tertiary rounded-t-3xl"
+          className="transition-[bottom] ease-out duration-500 fixed bottom-[-98px] left-0 right-0 flex justify-end gap-2 mx-auto px-6 text-[#ffffff] bg-secondary p-[20px] border border-tertiary rounded-t-3xl z-30"
           style={{
             bottom: `${buttonsPosition}`,
           }}

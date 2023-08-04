@@ -17,7 +17,7 @@ export default function AboutPage() {
         </p>
       </div>
       <div
-        className={`transition-[top] ease-out duration-500 w-screen h-[calc(100vh-160px-96px-24px-84px-20px)] bg-secondary absolute top-[384px] rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[20px]`}
+        className={`transition-[top] ease-out duration-500 w-screen h-[calc(100%-160px-96px-24px-84px-20px)] bg-secondary absolute top-[384px] rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[20px]`}
       >
         <h1 className='font-["Roboto"] text-xl font-medium'>About</h1>
         <p className='font-["Roboto"]'>
