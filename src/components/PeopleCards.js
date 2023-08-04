@@ -32,7 +32,7 @@ export default function PeopleCards() {
       setFirstCardStyle({ ...firstCardStyle, position: '300px' });
       setSecondCardStyle({ ...secondCardStyle, position: '300px' });
     }
-  }, [formValues]);
+  }, [formValues.length]);
 
   useEffect(() => {
     if (calculatorOpen) {
