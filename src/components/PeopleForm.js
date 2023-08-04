@@ -10,7 +10,7 @@ export default function PeopleForm(props) {
       const lastCard = cardContainerRef.current.lastChild;
       lastCard.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
-  }, [props.formValues]);
+  }, [props.formValues.length]);
 
   let handleChange = (i, e) => {
     let newFormValues = [...props.formValues];
@@ -29,10 +29,10 @@ export default function PeopleForm(props) {
   };
 
   return (
-    <form className="relative" onSubmit={(e) => props.handleSubmit(e)}>
+    <form className="relative h-[100%]" onSubmit={(e) => props.handleSubmit(e)}>
       <div
         ref={cardContainerRef}
-        className={`transition-[top] ease-out duration-500 w-screen h-[calc(100vh-160px-96px-24px)] bg-secondary absolute top-[300px] rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[20px]`}
+        className={`transition-[top] ease-out duration-500 w-screen h-[calc(100%-108px-56px-56px)] bg-secondary absolute top-[300px] rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[20px]`}
         style={{
           top: `${props.firstCardStyle.position}`,
           transitionDuration: `${props.firstCardStyle.time}`,
