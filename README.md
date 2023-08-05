@@ -24,7 +24,7 @@
 
 ## Link to the app
 
-Here is a link to: [Bill Splitter](bill-splitter-psi.vercel.app)
+Here is a link to: [Bill Splitter](https://bill-splitter-psi.vercel.app)
 
 ## Built with
 
