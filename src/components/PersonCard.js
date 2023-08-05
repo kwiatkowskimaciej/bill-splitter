@@ -1,6 +1,6 @@
 export default function PersonCard(props) {
   return (
-    <div className="drop-shadow-lg border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] min-h-[109px] flex items-center justify-between px-7">
+    <div className="sm:w-[358px] sm:h-[109px] drop-shadow-lg border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] min-h-[109px] flex items-center justify-between px-7">
       <button type="button" onClick={props.remove}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

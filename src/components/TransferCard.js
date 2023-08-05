@@ -1,6 +1,6 @@
 export default function TransferCard(props) {
   return (
-    <div className="drop-shadow-lg border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] flex items-center justify-between py-4 pr-7 pl-8">
+    <div className="sm:w-[358px] drop-shadow-lg border-solid border-[1px] border-black rounded-xl bg-[#FEF7FF] flex items-center justify-between py-4 pr-7 pl-8">
       <div className="flex">
         <div>
           <div className="relative -left-[8px] top-[6px] rounded-full border-solid border-2 h-3.5 w-3.5">

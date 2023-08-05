@@ -151,7 +151,7 @@ export default function PeopleCards() {
         setBack={setBack}
       />
       <div
-        className={`transition-[top] ease-out duration-500 delay-500 w-screen h-[calc(100%-112px-76px-16px)] bg-secondary absolute rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[40px] z-20`}
+        className={`sm:flex-row sm:flex-wrap sm:justify-start sm:content-start sm: transition-[top] ease-out duration-500 delay-500 w-screen h-[calc(100%-112px-76px-16px)] bg-secondary absolute rounded-t-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.25)] px-6 pt-7 flex flex-col gap-5 overflow-y-auto pb-[40px] z-20`}
         style={{
           top: `${response ? thirdCardPosition : '100vh'}`,
         }}
